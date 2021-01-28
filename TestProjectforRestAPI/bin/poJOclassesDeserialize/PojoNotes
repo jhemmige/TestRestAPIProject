@@ -1,0 +1,70 @@
+There are 2 challenges in RestAssured API
+
+1. Build Payload and Send to API. This can be done by ..copying the payload(or body) inside the .body of the script or creating a method for the payload and calling that 
+method in the body of the script.So, In addition to this, we can also create Java Object for the payload and call the Java obj 
+2. Parse the response as per our wish
+
+Serialization: 
+Process of converting Java objects to Request payloads( or Body) is called Serialization. via pojo classes
+POJO - Plain Object Java Class
+In serialiazation, we use setters value playing a keyrole but in deserialization , we use getters.
+
+In Deserialization: 
+We convert the Json response obtained to Java Objects.
+
+Converting response into Java Object
+We need some external libraries to get serialization and deserialization.
+
+
+
+GetObjects & PojoClass1GetCourse Notes
+
+First we crete a Pojo Class called "GetObjects"
+1. We create variables for all the nodes here. 
+{ "instructor": "RahulShetty", "url": "rahulshettycademy.com", "services": "projectSupport", "expertise": "Automation",
+"courses": { "webAutomation": [ { "courseTitle": "Selenium Webdriver Java", "price": "50" }, { "courseTitle": "Cypress",
+"price": "40"
+},
+{
+"courseTitle": "Protractor",
+"price": "40"
+}
+],
+"api": [
+{
+"courseTitle": "Rest Assured Automation using Java",
+"price": "50"
+},
+{
+"courseTitle": "SoapUI Webservices testing",
+"price": "40"
+}
+],
+"mobile": [
+{
+"courseTitle": "Appium-Mobile Automation using Java",
+"price": "50"
+}
+]
+},
+"linkedIn": "https://www.linkedin.com/in/rahul-shetty-trainer/"
+}
+
+/Users/jayashreehemmige/Documents/rest_api/POJO/Pojo_getCourses.png
+
+2. We get the getters and Setters for the variables. 
+3. Since Course has a sub Json, we create another pojo class called "PojoClass1GetCourse"
+4. From the "PojoClass1GetCourse" we will call the variable into courses.
+5. Change the Return Type to GetCourses for Getters
+
+6. Remove the error for setters by changing the argument according to the class. 
+
+(watch 65. Creating POJO classes for the real
+time Nested Array Json) 
+7. Now, create 3 more pojo classes called WebAutomation, Mobile, Api since courses include these.
+8. These courses in turn include coursetitle nad price inside arrays hence GetCourses is changed to list and returntype being class for each course.
+
+
+
+
+
